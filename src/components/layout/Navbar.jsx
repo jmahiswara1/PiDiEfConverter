@@ -18,7 +18,7 @@ export function Navbar() {
     const pathname = usePathname()
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-surface-border bg-background/80 backdrop-blur-md">
+        <header className="sticky top-0 z-50 w-full border-b border-[#e5e7eb] bg-[#fdfaf6]/80 backdrop-blur-md">
             <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
                 <Link href="/" className="flex items-center gap-2 group">
                     <Image
@@ -40,7 +40,7 @@ export function Navbar() {
                                 href={item.href}
                                 className={cx(
                                     "relative px-3 py-2 text-sm transition-colors",
-                                    isActive ? "text-text" : "text-text-muted hover:text-text"
+                                    isActive ? "text-[#1f2937]" : "text-[#6b7280] hover:text-[#1f2937]"
                                 )}
                             >
                                 <div className="flex items-center gap-2 relative z-10">
@@ -50,7 +50,7 @@ export function Navbar() {
                                 {isActive && (
                                     <motion.div
                                         layoutId="navbar-active"
-                                        className="absolute inset-0 rounded-md bg-surface border border-surface-border text-text"
+                                        className="absolute inset-0 rounded-md bg-white border border-[#e5e7eb] text-[#1f2937]"
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}
