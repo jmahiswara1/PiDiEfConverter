@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,jsx}",
-    "./src/components/**/*.{js,jsx}",
-    "./src/app/**/*.{js,jsx}",
+    "./src/pages/**/*.{js,jsx,ts,tsx}",
+    "./src/components/**/*.{js,jsx,ts,tsx}",
+    "./src/app/**/*.{js,jsx,ts,tsx}",
   ],
   darkMode: "class",
   theme: {
@@ -14,15 +14,23 @@ module.exports = {
         mono: ["JetBrains Mono", "monospace"],
       },
       colors: {
+        background: "var(--color-background)",
         surface: {
-          DEFAULT: "#18181b",
-          hover: "#27272a",
-          border: "#3f3f46",
+          DEFAULT: "var(--color-surface)",
+          hover: "var(--color-surface-hover)",
+          border: "var(--color-surface-border)",
+        },
+        text: {
+          DEFAULT: "var(--color-text)",
+          muted: "var(--color-text-muted)",
         },
         accent: {
-          DEFAULT: "#c084fc",
-          hover: "#a855f7",
+          DEFAULT: "var(--color-accent)",
+          hover: "var(--color-accent-hover)",
         },
+        error: "var(--color-error)",
+        warning: "var(--color-warning)",
+        success: "var(--color-success)",
       },
       borderRadius: {
         card: "1rem",

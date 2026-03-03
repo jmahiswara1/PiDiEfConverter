@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PiDiEf Converter
 
-## Getting Started
+PiDiEf Converter adalah utilitas web yang dirancang khusus untuk konversi gambar, manipulasi PDF, dan rendering dokumen ke PDF. Proyek ini dibangun menggunakan Next.js dengan fokus pada keamanan, privasi, dan performa.
 
-First, run the development server:
+**Akses langsung ke aplikasi:** [PiDiEf Converter](https://pidiefconverter.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Fitur Utama
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Konversi Gambar: Konversi format gambar antara WebP, PNG, dan JPEG tanpa kehilangan kualitas. Proses dilakukan di sisi klien untuk kecepatan maksimal.
+- Manipulasi PDF: Pisahkan atau gabungkan file PDF secara instan langsung di dalam browser Anda. File tidak pernah dikirim ke server.
+- Dokumen ke PDF: Rendering standar profesional untuk file DOCX, XLSX, dan PPTX menjadi PDF (memerlukan integrasi CloudConvert API).
+- Privasi Terjamin: Arsitektur tanpa status (stateless), memastikan file Anda tidak pernah disimpan di server setelah proses selesai.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Struktur Proyek
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Aplikasi ini menggunakan fitur Next.js terbaru (App Router) dan Tailwind CSS, serta komponen antarmuka yang modern.
 
-## Learn More
+## Panduan Instalasi
 
-To learn more about Next.js, take a look at the following resources:
+1. Pastikan Anda telah menginstal Node.js di sistem Anda.
+2. Instal semua dependensi yang dibutuhkan:
+   
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Konfigurasi Lingkungan (Opsional):
+   Jika Anda berencana menggunakan fitur konversi Dokumen (.docx, .xlsx, .pptx) ke PDF, Anda harus menyediakan kunci API CloudConvert.
+   
+   Buat file bernama `.env.local` di direktori akar proyek, kemudian tambahkan baris berikut:
+   
+   ```env
+   CLOUDCONVERT_API_KEY=kunci_api_anda_di_sini
+   CLOUDCONVERT_API_URL=https://sync.api.cloudconvert.com/v2/jobs
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Menjalankan Server Pengembangan:
+   
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+   Setelah server berjalan, buka tautan `http://localhost:3000` di peramban (browser) Anda.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Keamanan dan Performa
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Platform ini telah melewati proses audit dan implementasi keamanan dasar:
+- Proteksi CORS dan CSRF pada rute API.
+- Pembatasan laju permintaan (Rate Limiting) untuk mencegah penyalahgunaan API.
+- Pengaturan Content Security Policy (CSP) dan header keamanan pendukung.
+- Optimalisasi aset dan penghapusan dependensi javascript berat untuk rendering awal halaman (menggunakan animasi CSS murni).
+
+## Hak Cipta dan Lisensi
+
+Dibuat untuk kebutuhan produktivitas.

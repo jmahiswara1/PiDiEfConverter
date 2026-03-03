@@ -40,6 +40,17 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Docs
 /docs
-.agent/
-.agents/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local environment variables
+.env*.local

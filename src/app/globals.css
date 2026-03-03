@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #09090b;
-  --color-surface: #18181b;
-  --color-surface-hover: #27272a;
-  --color-surface-border: #3f3f46;
-  --color-text: #fafafa;
-  --color-text-muted: #a1a1aa;
-  --color-accent: #c084fc;
-  --color-accent-hover: #a855f7;
-  --color-success: #34d399;
-  --color-error: #f87171;
-  --color-warning: #fbbf24;
+  --color-background: #fdfaf6;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-border: #e5e7eb;
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-accent: #a41b1b;
+  --color-accent-hover: #8b1616;
+  --color-success: #10b981;
+  --color-error: #a41b1b;
+  --color-warning: #f59e0b;
 }
 
 * {
@@ -36,4 +36,22 @@ body {
 ::selection {
   background: var(--color-accent);
   color: var(--color-background);
+}
+
+/* Hero slide-up animation (replaces framer-motion for perf) */
+@keyframes hero-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-slide-up {
+  opacity: 0;
+  animation: hero-slide-up 0.8s ease-out forwards;
 }
