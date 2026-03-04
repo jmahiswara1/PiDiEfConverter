@@ -6,7 +6,7 @@ const Card = React.forwardRef(({ className, ...props }, ref) => (
         ref={ref}
         className={cx(
             "rounded-card border border-surface-border bg-surface text-text shadow-sm overflow-hidden relative group",
-            "before:absolute before:inset-0 before:z-0 before:bg-[url('/noise.svg')] before:opacity-20 before:mix-blend-overlay",
+            "before:absolute before:inset-0 before:z-0 before:bg-[url('/noise.svg')] before:opacity-20 before:mix-blend-overlay before:pointer-events-none",
             className
         )}
         {...props}

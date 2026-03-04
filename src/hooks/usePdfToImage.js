@@ -7,7 +7,7 @@ async function loadPdfJs() {
     const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.js")
     const lib = pdfjsLib.default || pdfjsLib
     if (lib.GlobalWorkerOptions) {
-        lib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${lib.version}/pdf.worker.min.js`
+        lib.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.js`
     }
     return lib
 }

@@ -15,8 +15,9 @@ const nextConfig = {
                     {
                         key: "Content-Security-Policy",
                         value: [
-                            "default-src 'self'",
+                            "default-src 'self' blob:",
                             "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
+                            "worker-src 'self' blob:",
                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
                             "font-src 'self' https://fonts.gstatic.com",
                             "img-src 'self' data: blob:",

@@ -15,12 +15,20 @@ function getAllowedOrigins() {
         return envOrigins.split(",").map(o => o.trim())
     }
     // Default: allow localhost during development
-    return [
+    const origins = [
         "http://localhost:3000",
         "http://localhost:3001",
         "http://localhost:3002",
         "http://localhost:3003",
     ]
+    // Auto-include Vercel deployment URLs
+    if (process.env.VERCEL_URL) {
+        origins.push(`https://${process.env.VERCEL_URL}`)
+    }
+    if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+        origins.push(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`)
+    }
+    return origins
 }
 
 /**
